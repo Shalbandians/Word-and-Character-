@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Counter</title>
+  <style>
+    body{ 
+      padding: 50px 100px;
+    }
+    h1{
+      font-weight: bold;
+      color: white;
+      background-color: blueviolet;
+      text-align: center;
+      margin: 0;
+    }
+    #box{
+      width: 99.3%;
+      border-color: blueviolet;
+      font-size: 15px;
+    }
+    p{
+      padding: 10px;
+      font-size: 25px;
+      text-align: center;
+background-color: blueviolet;
+margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Words and Chararcter Counter</h1>
+  <textarea  id="box" cols="30" rows="10"></textarea>
+  <p>
+    <span id="words">0</span>  Word and <span id="ch">0</span>  Chararcter
+  </p>
+  <script>
+    let text=document.getElementById('box');
+    text.addEventListener('input',function(){
+      let text=this.value;
+       let ch=text.length;
+       document.getElementById('ch').innerHTML=ch;
+       text=text.trim();
+       let word=text.split(' ');
+       let removespace=word.filter(function(elm){
+        return elm !='';
+       })
+       document.getElementById('words').innerHTML=removespace.length;
+    });
+  </script>
+  
+</body>
+</html>
